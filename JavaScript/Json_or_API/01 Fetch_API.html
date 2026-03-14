@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featch or Get Api</title>
+</head>
+<body>
+    <h2>Student List</h2>
+
+    <button onclick="getStudent()">Load Student</button>
+
+    <ul id="studentList"></ul>
+
+    <script>
+        async function getStudent() {
+            let response = await fetch("http://localhost:3000/students");  // fetch method it take by default get method
+            let students =await response.json();
+
+            let list = document.getElementById("studentList");
+            list.innerHTML = "";
+
+            students.forEach(function(student){
+                let li = document.createElement("li");
+                li.textContent = student.name + " - " + student.course;
+
+                list.appendChild(li);
+            })
+        }
+    </script>
+</body>
+</html>

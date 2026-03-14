@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do </title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        .container{
+            width: 200px;
+            padding: 25px;
+            margin-left: 40%;
+            margin-top: 40px;
+            background-color: bisque;
+            border-radius: 15px ;
+            box-shadow: 0 0 10px black;
+        }
+        h2{
+            color: brown;
+            text-align: center;
+        }
+        input,button,label{
+            margin-top: 15px;
+            padding: 5px;
+        }
+        button{
+            width: 90%;
+            background-color: aquamarine;
+            border: none;
+            box-shadow: 20px 10px 15px rgb(102, 171, 172);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+    <h2>ToDo</h2>
+    
+    <label>Name </label>
+    <input type="text" id="task">
+    <button onclick="addTask()">Add</button>
+    </div>
+
+    <ul id="list"></ul>
+
+    <script>
+        let task = [];
+
+        function addTask()
+        {
+            let taskText = document.getElementById("task").value;
+
+            if(taskText === "")
+            {
+                return;
+            }
+
+            let taskObj = {id : new Date().toDateString(), name: taskText};
+
+            task.push(taskObj);
+
+            displayTask();
+        }
+
+        function displayTask()
+        {
+            let ul = document.getElementById("list");
+
+            ul.innerHTML = "";
+            task.forEach((obj)=>{
+                let li = document.createElement("li");
+                li.innerText = obj.id + " : " + obj.name;
+
+                ul.appendChild(li);
+            })
+        }
+    </script>
+</body>
+</html>

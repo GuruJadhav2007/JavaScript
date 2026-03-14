@@ -1,0 +1,36 @@
+{
+  "students": [
+    {
+      "name": "Ash kecham",
+      "course": "BCS",
+      "id": 1
+    },
+    {
+      "name": "Serina",
+      "course": "BCA",
+      "id": 2
+    },
+    {
+      "name": "Raviraj ",
+      "course": "B.Com",
+      "id": 3
+    },
+    {
+      "name": "Jack",
+      "course": "MCS",
+      "id": 4
+    }
+  ],
+  "login": [
+    {
+      "id": 101,
+      "username": "Admin",
+      "password": "A123"
+    },
+    {
+      "id": 102,
+      "username": "Maneger",
+      "password": "M123"
+    }
+  ]
+}
